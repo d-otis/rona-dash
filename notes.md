@@ -1,1 +1,1 @@
-1. continent totals on continent show page
+1. add county model
