@@ -1,0 +1,18 @@
+<div class="col-sm-6 offset-sm-3">
+	<div class="card text-right" style="">
+		<img src="<%= @country.countryInfo['flag'] %>" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h2 class="card-title"><%= @country.country %></h2>
+		</div>
+		<ul class="list-group list-group-flush">
+			<li class="list-group-item">Cases: <%= Country.format_num(@country.cases) %></li>
+			<li class="list-group-item">Today's Cases: <%= Country.format_num(@country.todayCases) %></li>
+			<li class="list-group-item">Recovered: <%= Country.format_num(@country.recovered) %></li>
+			<li class="list-group-item">Deaths: <%= Country.format_num(@country.deaths) %></li>
+			<li class="list-group-item border-bottom-0">Today's Deaths: <%= Country.format_num(@country.todayDeaths) %></li>
+		</ul>
+
+	</div>
+</div>
+
+

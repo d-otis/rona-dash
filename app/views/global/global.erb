@@ -1,0 +1,13 @@
+<div class="col-sm-4 offset-sm-4">
+	
+<div class="card" style="">
+	<div class="card-header">
+		<i class="fas fa-globe"></i> Global Figures
+	</div>
+	<ul class="list-group list-group-flush">
+		<li class="list-group-item">Total Cases: <%= Country.format_num(@globals[:total_cases]) %></li>
+		<li class="list-group-item">Recovered: <%= Country.format_num(@globals[:recovered]) %></li>
+		<li class="list-group-item">Deaths: <%= Country.format_num(@globals[:deaths]) %></li>
+	</ul>
+</div>
+</div>

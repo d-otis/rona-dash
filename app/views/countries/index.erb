@@ -1,0 +1,32 @@
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Country</th>
+				<th scope="col">Continent</th>
+				<th scope="col">Cases</th>
+				<th scope="col">Today's Cases</th>
+				<th scope="col">Recovered</th>
+				<th scope="col">Deaths</th>
+				<th scope="col">Today's Deaths</th>
+				<th scope="col">Tests</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @countries.each.with_index(1) do |country, index| %>
+				<tr>
+					<!-- <td><%#= index %></td> -->
+					<td><a href="/countries/<%= country.country.downcase %>"><img src="<%= country.countryInfo['flag'] %>" class="" style="width: 50px; height:auto"></a>	</td>
+					<td><a href="/countries/<%= country.slug %>"><%= country.country %></a></td>
+					<td><a href="/continents/<%= country.continent.slug %>"><%= country.continent.name %></a> </td>
+					<td><%= Country.format_num(country.cases) %></td>
+					<td><%= Country.format_num(country.todayCases) %></td>
+					<td><%= Country.format_num(country.recovered) %></td>
+					<td><%= Country.format_num(country.deaths) %></td>
+					<td><%= Country.format_num(country.todayDeaths) %></td>
+					<td><%= Country.format_num(country.tests) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>

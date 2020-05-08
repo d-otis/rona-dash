@@ -1,0 +1,1 @@
+1. continent totals on continent show page
