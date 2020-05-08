@@ -8,3 +8,7 @@ task :console do
 	Pry.start
 end
 
+task :atl do
+	api = API.new.atl
+end
+
