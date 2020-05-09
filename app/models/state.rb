@@ -60,6 +60,18 @@ class State
 		format_num(self.death)
 	end
 
+	def print_icu_current
+		format_num(self.inIcuCurrently)
+	end
+
+	def print_hospitalized_current
+		format_num(self.hospitalizedCurrently)
+	end
+
+	def print_vent_current
+		format_num(self.onVentilatorCurrently)
+	end
+
 	def print_time_checked
 		time = Time.parse(self.dateChecked)
 		"Last checked: #{time.strftime("%D")} @ #{time.strftime("%I:%M %p")}"

@@ -17,11 +17,11 @@
 						<li class="list-group-item"><i class="fas fa-minus-circle"></i> <%= @state.print_neg %></li>
 						<li class="list-group-item"><i class="fas fa-vials"></i> <%= @state.print_tests %></li>
 						<li class="list-group-item">Deaths: <%= @state.print_death %></li>
-						<li class="list-group-item">Currently Hospitalized: <%= @state.hospitalizedCurrently %></li>
+						<li class="list-group-item">Currently Hospitalized: <%= @state.print_hospitalized_current %></li>
 						<li class="list-group-item">Cumulative Hospitalizations: <%= @state.hosiitalizedCumulative %></li>
-						<li class="list-group-item">Current ICU: <%= @state.inIcuCurrently %></li>
+						<li class="list-group-item">Current ICU: <%= @state.print_icu_current %></li>
 						<li class="list-group-item">Cumulative ICU: <%= @state.inIcuCumulative %></li>
-						<li class="list-group-item">On Ventilator: <%= @state.onVentilatorCurrently %></li>
+						<li class="list-group-item">On Ventilator: <%= @state.print_vent_current %></li>
 						<li class="list-group-item">Cumulative Ventilator: <%= @state.onVentilatorCumulative %></li>
 						<li class="list-group-item"><%= @state.print_time_modified %></li>
 						<li class="list-group-item"><%= @state.print_time_checked %></li>
