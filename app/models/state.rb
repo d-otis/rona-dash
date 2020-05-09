@@ -60,6 +60,29 @@ class State
 		format_num(self.death)
 	end
 
+	def print_time_checked
+		time = Time.parse(self.dateChecked)
+		"Last checked: #{time.strftime("%D")} @ #{time.strftime("%I:%M %p")}"
+	end
+
+	def print_time_modified
+		time = Time.parse(self.dateModified)
+		"Last modified: #{time.strftime("%D")} @ #{time.strftime("%I:%M %p")}"
+	end
+
+	def print_grade
+		grade = self.dataQualityGrade
+		if ["A+", "A"].include?(grade)
+			"<span class='badge badge-pill badge-success'>#{grade}</span>"
+		elsif grade == "B"
+			"<span class='badge badge-pill badge-primary'>#{grade}</span>"
+		elsif grade == "C"
+			"<span class='badge badge-pill badge-warning'>#{grade}</span>"
+		else
+			"<span class='badge badge-pill badge-danger'>#{grade}</span>"
+		end
+	end
+
 	def format_num(num)
 		if !num.nil?
 			num.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
