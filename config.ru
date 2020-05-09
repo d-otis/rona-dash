@@ -6,5 +6,6 @@ API.new.start
 
 use ContinentsController
 use CountriesController
+use StatesController
 
 run ApplicationController
