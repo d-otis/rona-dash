@@ -8,7 +8,6 @@ class StatesController < ApplicationController
 
 	get "/states/:abbrev" do
 		@state = State.find(params[:abbrev])
-		binding.pry
 
 		erb :"/states/show"
 	end
