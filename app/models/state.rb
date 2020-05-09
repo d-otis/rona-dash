@@ -34,6 +34,16 @@ class State
 		format_num(self.positive)
 	end
 
+	def print_twitter
+		if self.has_twitter?
+			"<a href=\"https://www.twitter.com/#{self.twitter[1..-1]}\" target=\"_blank\"><i class=\"fab fa-twitter\"></i></a>"
+		end
+	end
+
+	def has_twitter?
+		self.twitter.nil? ? false : true
+	end
+
 	def print_neg
 		format_num(self.negative)
 	end
