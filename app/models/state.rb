@@ -30,8 +30,36 @@ class State
 		end
 	end
 
-	def self.find(state)
-		self.all.find {|state| state.state == state}
+	def print_pos
+		format_num(self.positive)
+	end
+
+	def print_neg
+		format_num(self.negative)
+	end
+
+	def print_tests
+		format_num(self.totalTestResults)
+	end
+
+	def print_recovered
+		format_num(self.recovered)
+	end
+
+	def print_death
+		format_num(self.death)
+	end
+
+	def format_num(num)
+		if !num.nil?
+			num.to_s.reverse.gsub(/(\d{3})(?=\d)/, '\\1,').reverse
+		else
+			"Not provided."
+		end
+	end
+
+	def self.find(abbrev)
+		self.all.find {|state| state.state == abbrev}
 	end
 
 	def update_state(hash)
