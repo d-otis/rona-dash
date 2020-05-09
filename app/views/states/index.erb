@@ -1,0 +1,28 @@
+<div class="col-sm-12">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">State</th>
+				<th scope="col">Positive</th>
+				<th scope="col">Negative</th>
+				<th scope="col">Tests</th>
+				<th scope="col">Recovered</th>
+				<th scope="col">Death</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @states.each.with_index(1) do |state, index| %>
+			<tr>
+				<td><%= index %></td>
+				<td><a href="/states/<%= state.state %>"><%= state.name %></a></td>
+				<td><%= state.print_pos %></td>
+				<td><%= state.print_neg %></td>
+				<td><%= state.print_tests %></td>
+				<td><%= state.print_recovered %></td>
+				<td><%= state.print_death %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
