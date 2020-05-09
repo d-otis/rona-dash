@@ -10,4 +10,62 @@ class API
 		Continent.find("").name = "Ships"
 		"API call complete."
 	end
+
+	def states_info_hashes
+		info_url = "https://covidtracking.com/api/v1/states/info.json"
+
+		doc_states_info = HTTParty.get(info_url)
+
+		doc_states_info.collect do |state|
+			{
+				state: state["state"],
+				name: state["name"],
+				covid19SiteOld: state["covid19SiteOld"],
+				covid19Site: state["covid19Site"],
+				covid19SiteSecondary: state["covid19SiteSecondary"],
+				twitter: state["twitter"],
+				notes: state["notes"]
+			}
+		end
+	end
+
+	def states_current_hashes
+		states_current_url = "https://covidtracking.com/api/v1/states/current.json"
+		doc_states_current = HTTParty.get(states_current_url)
+
+		doc_states_current.collect do |state|
+			{
+				state: state["state"],
+				positive: state["positive"],
+				negative: state["negative"],
+				recovered: state["recovered"],
+				death: state["death"],
+				totalTestResults: state["totalTestResults"],
+				dataQualityGrade: state["dataQualityGrade"],
+				notes: state["notes"],
+				hospitalizedCurrently: state["hospitalizedCurrently"],
+				hosiitalizedCumulative: state["hosiitalizedCumulative"],
+				inIcuCurrently: state["inIcuCurrently"],
+				inIcuCumulative: state["inIcuCumulative"],
+				onVentilatorCurrently: state["onVentilatorCurrently"],
+				onVentilatorCumulative: state["onVentilatorCumulative"],
+				dateModified: state["dateModified"],
+				dateChecked: state["dateChecked"]
+			}
+		end
+	end
+
+	def new_start
+		hashes = combined_hashes(states_info_hashes, states_current_hashes)
+		State.create(hashes)
+	end
+
+	def combined_hashes(info_hashes, current_hashes)
+		# zipper these two hashes together
+		info_hashes.collect do |info_hash|
+			matched_current_hash = current_hashes.find {|current_hash| current_hash[:state] == info_hash[:state]}
+			info_hash.merge(matched_current_hash)
+		end
+	end
+
 end
