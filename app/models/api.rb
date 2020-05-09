@@ -8,6 +8,9 @@ class API
 			Country.new(element)
 		end
 		Continent.find("").name = "Ships"
+
+		State.create(combined_hashes(states_info_hashes, states_current_hashes))
+
 		"API call complete."
 	end
 
@@ -56,8 +59,7 @@ class API
 	end
 
 	def new_start
-		hashes = combined_hashes(states_info_hashes, states_current_hashes)
-		State.create(hashes)
+		State.create(combined_hashes(states_info_hashes, states_current_hashes))
 	end
 
 	def combined_hashes(info_hashes, current_hashes)
