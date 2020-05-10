@@ -13,16 +13,16 @@
 					<ul class="list-group list-group-flush">
 						<li class="list-group-item">Data Quality Grade: <%= @state.print_grade %></li>
 						<li class="list-group-item"><a href="<%= @state.covid19Site %>" target="_blank"> Covid-19 Dashboard <i class="fas fa-link"></i></a> </li>
-						<li class="list-group-item"><i class="fas fa-plus-circle"></i> <%= @state.print_pos %></li>
-						<li class="list-group-item"><i class="fas fa-minus-circle"></i> <%= @state.print_neg %></li>
-						<li class="list-group-item"><i class="fas fa-vials"></i> <%= @state.print_tests %></li>
+						<li class="list-group-item"><i class="fas fa-plus-circle"></i> <%= @state.print_positive %></li>
+						<li class="list-group-item"><i class="fas fa-minus-circle"></i> <%= @state.print_negative %></li>
+						<li class="list-group-item"><i class="fas fa-vials"></i> <%= @state.print_totalTestResults %></li>
 						<li class="list-group-item">Deaths: <%= @state.print_death %></li>
-						<li class="list-group-item">Currently Hospitalized: <%= @state.print_hospitalized_current %></li>
-						<li class="list-group-item">Cumulative Hospitalizations: <%= @state.hosiitalizedCumulative %></li>
-						<li class="list-group-item">Current ICU: <%= @state.print_icu_current %></li>
-						<li class="list-group-item">Cumulative ICU: <%= @state.inIcuCumulative %></li>
-						<li class="list-group-item">On Ventilator: <%= @state.print_vent_current %></li>
-						<li class="list-group-item">Cumulative Ventilator: <%= @state.onVentilatorCumulative %></li>
+						<li class="list-group-item">Currently Hospitalized: <%= @state.print_hospitalizedCurrently %></li>
+						<li class="list-group-item">Cumulative Hospitalizations: <%= @state.print_hospitalizedCumulative %></li>
+						<li class="list-group-item">Current ICU: <%= @state.print_inIcuCurrently %></li>
+						<li class="list-group-item">Cumulative ICU: <%= @state.print_inIcuCumulative %></li>
+						<li class="list-group-item">On Ventilator: <%= @state.print_onVentilatorCurrently %></li>
+						<li class="list-group-item">Cumulative Ventilator: <%= @state.print_onVentilatorCumulative %></li>
 						<li class="list-group-item"><%= @state.print_time_modified %></li>
 						<li class="list-group-item"><%= @state.print_time_checked %></li>
 					</ul>
