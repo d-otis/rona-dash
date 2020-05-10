@@ -5,14 +5,14 @@ class State
 					:negative, :dataQualityGrade, :hospitalizedCurrently,
 					:hosiitalizedCumulative, :inIcuCurrently, :inIcuCumulative,
 					:onVentilatorCurrently, :onVentilatorCumulative, :recovered,
-					:death, :totalTestResults, :dateModified, :dateChecked
+					:death, :totalTestResults, :dateModified, :dateChecked, :screenshots
 
 	@@all = []
 
 	def initialize(hash)
 		hash.each {|k, v| self.send("#{k}=", v)}
 
-		@counties = []
+		@screenshots = []
 	end
 
 	def save
@@ -117,5 +117,9 @@ class State
 
 	def self.last
 		self.all.last
+	end
+
+	def last_screenshot
+		self.screenshots.last.url
 	end
 end
