@@ -10,6 +10,8 @@ class API
 		Continent.find("").name = "Ships"
 
 		State.create(combined_hashes(states_info_hashes, states_current_hashes))
+		
+		screenshots
 
 		"API call complete."
 	end
@@ -58,15 +60,20 @@ class API
 		end
 	end
 
-	def new_start
-		State.create(combined_hashes(states_info_hashes, states_current_hashes))
-	end
-
 	def combined_hashes(info_hashes, current_hashes)
 		# zipper these two hashes together
 		info_hashes.collect do |info_hash|
 			matched_current_hash = current_hashes.find {|current_hash| current_hash[:state] == info_hash[:state]}
 			info_hash.merge(matched_current_hash)
+		end
+	end
+
+	def screenshots
+		screenshots_url = "https://covidtracking.com/api/v1/states/screenshots.json"
+		doc_screenshots = HTTParty.get(screenshots_url)
+
+		doc_screenshots.each do |hash|
+			Screenshot.new(hash)
 		end
 	end
 
