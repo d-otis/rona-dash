@@ -49,7 +49,7 @@ class API
 				dataQualityGrade: state["dataQualityGrade"],
 				notes: state["notes"],
 				hospitalizedCurrently: state["hospitalizedCurrently"],
-				hosiitalizedCumulative: state["hosiitalizedCumulative"],
+				hospitalizedCumulative: state["hosiitalizedCumulative"],
 				inIcuCurrently: state["inIcuCurrently"],
 				inIcuCumulative: state["inIcuCumulative"],
 				onVentilatorCurrently: state["onVentilatorCurrently"],
