@@ -38,6 +38,10 @@ class ApplicationController < Sinatra::Base
 		end		
 	end
 
+	get "/about" do
+		erb :"about"
+	end
+
 	helpers do
 		def continents
 			@continents ||= Continent.all
