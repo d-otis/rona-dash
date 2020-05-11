@@ -39,6 +39,7 @@ class ApplicationController < Sinatra::Base
 	end
 
 	get "/about" do
+		@title = "About"
 		erb :"about"
 	end
 
