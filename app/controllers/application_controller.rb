@@ -22,6 +22,7 @@ class ApplicationController < Sinatra::Base
 	get "/refresh" do
 		Country.all.clear
 		Continent.all.clear
+		State.all.clear
 		API.new.start
 
 		redirect "/"
