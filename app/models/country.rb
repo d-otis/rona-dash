@@ -3,7 +3,9 @@ class Country
 	attr_accessor 	:country, :cases, :todayCases, :deaths, :todayDeaths, 
 					:recovered, :critical, :countryInfo, :active, :casesPerOneMillion, 
 					:deathsPerOneMillion, :updated, :tests, :testsPerOneMillion, :continent,
-					:population, :activePerOneMillion, :recoveredPerOneMillion, :criticalPerOneMillion
+					:population, :activePerOneMillion, :recoveredPerOneMillion, :criticalPerOneMillion,
+					:todayRecovered, :oneCasePerPeople, :oneDeathPerPeople, :oneTestPerPeople
+
 
 	@@all = []
 

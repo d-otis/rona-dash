@@ -1,6 +1,6 @@
 class Screenshot
 
-	attr_accessor :state, :url, :dateChecked, :secondary, :date, :size
+	attr_accessor :state, :url, :dateChecked, :secondary, :date, :size, :tertiary
 
 	@@all = []
 
