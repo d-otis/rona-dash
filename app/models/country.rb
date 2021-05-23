@@ -4,7 +4,7 @@ class Country
 					:recovered, :critical, :countryInfo, :active, :casesPerOneMillion, 
 					:deathsPerOneMillion, :updated, :tests, :testsPerOneMillion, :continent,
 					:population, :activePerOneMillion, :recoveredPerOneMillion, :criticalPerOneMillion,
-					:todayRecovered, :oneCasePerPeople, :oneDeathPerPeople, :oneTestPerPeople
+					:todayRecovered, :oneCasePerPeople, :oneDeathPerPeople, :oneTestPerPeople, :undefined
 
 
 	@@all = []
